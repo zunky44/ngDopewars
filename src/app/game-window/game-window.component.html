@@ -1,15 +1,17 @@
-<div class='gamewindow'>
-  <div *ngIf="nameSubmitted == false">
-    <label>Enter your name:
-      <input type='text' [(ngModel)]="newgame.playername" placeholder="name">
-      <button (click)="submitName()" >OK</button>
-    </label>
+<body>
+  <div class='gamewindow'>
+    <div *ngIf="nameSubmitted == false">
+      <label>Enter your name:
+        <input type='text' [(ngModel)]="newgame.playername" placeholder="name">
+        <button mat-raised-button color='primary'(click)="submitName()" >OK</button>
+      </label>
+    </div>
+    <div *ngIf="nameSubmitted == true">
+      <button (click)="getInventory()">Inventory</button>
+    </div>
+    <div *ngIf="showInventory == true">
+      <ngdw-inventory></ngdw-inventory>
+    </div>
   </div>
-  <div *ngIf="nameSubmitted == true">
-    <button (click)="getInventory()">Inventory</button>
-  </div>
-  <div *ngIf="showInventory == true">
-    <ngdw-inventory></ngdw-inventory>
-  </div>
-</div>
-<button mat-button (click)="openDialog()">Open dialog</button>
+  <button mat-raised-button color='primary' (click)="openDialog()">Open dialog</button>
+</body>
