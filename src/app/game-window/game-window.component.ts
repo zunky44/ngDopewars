@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Inject } from '@angular/core';
 import { GameService } from '../game.service';
 import { Game } from '../game';
+import { MatDialog, MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'ngdw-game-window',
@@ -11,8 +12,9 @@ export class GameWindowComponent implements OnInit {
 
   newgame: Game;
   nameSubmitted: Boolean = false;
+  showInventory: Boolean = false;
 
-  constructor(private gameService: GameService) { }
+  constructor(private gameService: GameService, public dialog: MatDialog) { }
 
   ngOnInit() {
     this.getGame();
@@ -24,5 +26,31 @@ export class GameWindowComponent implements OnInit {
 
   submitName(): void {
     this.nameSubmitted = true;
+  }
+
+  getInventory(): void {
+    this.showInventory = true;
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(GameWindowDialogComponent, {
+      width: '50%'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('Dialog result: ${result}');
+    });
+  }
+}
+
+@Component({
+  selector: 'ngdw-game-window-dialog-component',
+  templateUrl: './game-window-dialog.html'
+})
+export class GameWindowDialogComponent {
+  constructor(
+  public dialogRef: MatDialogRef<GameWindowDialogComponent>) { }
+  onExitClick(): void {
+    this.dialogRef.close();
   }
 }

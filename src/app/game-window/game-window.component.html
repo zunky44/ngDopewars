@@ -6,7 +6,10 @@
     </label>
   </div>
   <div *ngIf="nameSubmitted == true">
-    Play ballssssssssss!
-    {{newgame.playername}}
+    <button (click)="getInventory()">Inventory</button>
+  </div>
+  <div *ngIf="showInventory == true">
+    <ngdw-inventory></ngdw-inventory>
   </div>
 </div>
+<button mat-button (click)="openDialog()">Open dialog</button>

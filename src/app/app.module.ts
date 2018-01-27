@@ -6,10 +6,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { GameWindowComponent } from './game-window/game-window.component';
+import { GameWindowComponent, GameWindowDialogComponent } from './game-window/game-window.component';
 import { AboutComponent } from './about/about.component';
 import { GameService } from './game.service';
 import { FormsModule } from '@angular/forms';
+import { InventoryComponent } from './inventory/inventory.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material';
+
+
 
 
 @NgModule({
@@ -18,12 +23,19 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     FooterComponent,
     GameWindowComponent,
-    AboutComponent
+    AboutComponent,
+    InventoryComponent,
+    GameWindowDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule
+  ],
+  entryComponents: [
+    GameWindowDialogComponent
   ],
   providers: [GameService],
   bootstrap: [AppComponent]
