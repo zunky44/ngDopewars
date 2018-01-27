@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("//fonts.googleapis.com/css?family=Raleway");
+
+.title {
+  font-family: Raleway;
+  font-size: 25pt;
+  text-align: center;
+}
+
+.copyright {
+  font-family: Raleway;
+  font-size: 8pt;
+  text-align: center;
+}
+
+.footerlinks {
+  font-family: Raleway;
+  font-size: 10pt;
+  text-align: center;
+}
+
+.about {
+  font-family: Raleway;
+  font-size: 12pt;
+  text-align: center;
+  margin-top: 10%;
+  margin-bottom: 30%;
+}
+
+.gamewindow {
+  font-family: Raleway;
+  font-size: 12pt;
+  text-align: center;
+  margin-top: 10%;
+  margin-bottom: 30%;
+}

@@ -1,0 +1,12 @@
+<div class='gamewindow'>
+  <div *ngIf="nameSubmitted == false">
+    <label>Enter your name:
+      <input type='text' [(ngModel)]="newgame.playername" placeholder="name">
+      <button (click)="submitName()" >OK</button>
+    </label>
+  </div>
+  <div *ngIf="nameSubmitted == true">
+    Play ball!
+    {{newgame.playername}}
+  </div>
+</div>
