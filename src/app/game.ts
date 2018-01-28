@@ -1,4 +1,4 @@
 export class Game {
   playername: string;
-  playerdrugs: {};
+  playerdrugs: string[];
 }

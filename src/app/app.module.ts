@@ -10,10 +10,11 @@ import { GameWindowComponent, GameWindowDialogComponent } from './game-window/ga
 import { AboutComponent } from './about/about.component';
 import { GameService } from './game.service';
 import { FormsModule } from '@angular/forms';
-import { InventoryComponent } from './inventory/inventory.component';
+// import { InventoryComponent } from './inventory/inventory.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material';
 import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule } from '@angular/material';
+import { DataService } from './data.service';
 
 
 
@@ -25,7 +26,7 @@ import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIco
     FooterComponent,
     GameWindowComponent,
     AboutComponent,
-    InventoryComponent,
+    // InventoryComponent,
     GameWindowDialogComponent
   ],
   imports: [
@@ -43,7 +44,7 @@ import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIco
   entryComponents: [
     GameWindowDialogComponent
   ],
-  providers: [GameService],
+  providers: [GameService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

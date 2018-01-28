@@ -7,8 +7,10 @@
       </label>
     </div>
     <div *ngIf="nameSubmitted == true">
-      
+      Welcome, {{newgame.playername}}!
+      <input type='text' [(ngModel)]='itemToAdd'>
+      <button mat-raised-button color='primary'(click)='addToInventory(itemToAdd)'>Add to Inventory</button>
     </div>
   </div>
-  <button mat-raised-button color='primary' (click)="openDialog()">Open dialog</button>
+  <button mat-raised-button color='primary' (click)="openDialog()">Inventory</button>
 </body>
