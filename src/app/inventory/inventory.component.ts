@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'ngdw-inventory',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InventoryComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialogRef: MatDialogRef<InventoryComponent>) { }
+
+  onExitClick(): void {
+    this.dialogRef.close();
+  }
 
   ngOnInit() {
   }
