@@ -45,7 +45,7 @@ export class GameWindowComponent implements OnInit {
 
 @Component({
   selector: 'ngdw-game-window-dialog-component',
-  templateUrl: './game-window-dialog.html'
+  templateUrl: '../inventory/inventory.component.html'
 })
 export class GameWindowDialogComponent {
   constructor(
