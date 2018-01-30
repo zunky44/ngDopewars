@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("//fonts.googleapis.com/css?family=Raleway");
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import '~@angular/material/theming';
+@import './theme.scss';
 
 
 
@@ -44,6 +44,7 @@
 
 .title-center {
   margin: 0 auto;
+  font-size: 20pt;
 }
 
 .description {

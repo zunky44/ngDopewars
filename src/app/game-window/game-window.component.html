@@ -12,7 +12,7 @@
         <input matInput (keydown.enter)="submitName()" [(ngModel)]="newgame.playername"  value="Billy" >
       </mat-form-field>
     </form>
-      <button mat-raised-button color='primary'(click)="submitName()">OK</button>
+      <button mat-raised-button class="mat-accent" (click)="submitName()">OK</button>
   </div>
   <div *ngIf="nameSubmitted == true">
     <div class="welcome">

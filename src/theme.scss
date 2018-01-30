@@ -1,0 +1,12 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$ngdopewars-primary: mat-palette($mat-green, 500, 800, 300);
+$ngdopewars-secondary: mat-palette($mat-purple, A400, A700, 300);
+$ngdopewars-warn: mat-palette($mat-red, A200);
+
+$ngdopewars-theme: mat-light-theme($ngdopewars-primary, $ngdopewars-secondary, $ngdopewars-warn);
+
+
+@include angular-material-theme($ngdopewars-theme);
+
