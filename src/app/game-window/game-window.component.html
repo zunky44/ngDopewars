@@ -1,16 +1,26 @@
-<body>
-  <div class='gamewindow'>
-    <div *ngIf="nameSubmitted == false">
-      <label>Enter your name:
-        <input type='text' [(ngModel)]="newgame.playername" placeholder="name">
-        <button mat-raised-button color='primary'(click)="submitName()" >OK</button>
-      </label>
-    </div>
-    <div *ngIf="nameSubmitted == true">
-      Welcome, {{newgame.playername}}!
-      <input type='text' [(ngModel)]='itemToAdd'>
-      <button mat-raised-button color='primary'(click)='addToInventory(itemToAdd)'>Add to Inventory</button>
-    </div>
+<div class='gamewindow'>
+  <div *ngIf="nameSubmitted == false">
+    <div class="description">
+      International Dopewars is a clone of the MS-DOS game, Drug Wars, by John E. Dell. It was developed in Angular.
+      <br>
+      The goal of the game is to pay off the loanshark and make as much money as possible before the end of the month.
+      Buy low, sell high, and watch out for the cops!
+    </div>  
+    <form>
+      <label>Enter your name:</label>
+      <mat-form-field>
+        <input matInput (keydown.enter)="submitName()" [(ngModel)]="newgame.playername"  value="Billy" >
+      </mat-form-field>
+    </form>
+      <button mat-raised-button color='primary'(click)="submitName()">OK</button>
   </div>
-  <button mat-raised-button color='primary' (click)="openDialog()">Inventory</button>
-</body>
+  <div *ngIf="nameSubmitted == true">
+    <div class="welcome">
+      <h3>Welcome, {{newgame.playername}}!</h3>
+    </div>
+    <mat-tab-group>
+      <mat-tab label="Current Location"><ngdw-currentlocation></ngdw-currentlocation></mat-tab>
+      <mat-tab label="Jet"><ngdw-jet></ngdw-jet></mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

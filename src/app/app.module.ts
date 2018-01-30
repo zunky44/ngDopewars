@@ -1,23 +1,32 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
-
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { GameWindowComponent, GameWindowDialogComponent } from './game-window/game-window.component';
+import { GameWindowComponent } from './game-window/game-window.component';
 import { AboutComponent } from './about/about.component';
 import { GameService } from './game.service';
 import { FormsModule } from '@angular/forms';
-// import { InventoryComponent } from './inventory/inventory.component';
+import { InventoryComponent } from './inventory/inventory.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatDialogModule } from '@angular/material';
-import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule } from '@angular/material';
-import { DataService } from './data.service';
-
-
-
+import { MatDialogModule, MatGridListModule, MatCheckboxModule } from '@angular/material';
+import { MatButtonModule,
+          MatCardModule,
+          MatMenuModule,
+          MatToolbarModule,
+          MatIconModule,
+          MatInputModule,
+          MatTabsModule,
+          MatListModule,
+          MatRadioModule } from '@angular/material';
+import { InventoryService } from './inventory.service';
+import { JetComponent } from './jet/jet.component';
+import { CurrentlocationComponent } from './currentlocation/currentlocation.component';
+import { StatsComponent } from './stats/stats.component';
+import { LocationinfoComponent } from './locationinfo/locationinfo.component';
+import { DrugsforsaleComponent } from './drugsforsale/drugsforsale.component';
+import { ActionsComponent } from './actions/actions.component';
 
 @NgModule({
   declarations: [
@@ -26,8 +35,13 @@ import { DataService } from './data.service';
     FooterComponent,
     GameWindowComponent,
     AboutComponent,
-    // InventoryComponent,
-    GameWindowDialogComponent
+    InventoryComponent,
+    JetComponent,
+    CurrentlocationComponent,
+    StatsComponent,
+    LocationinfoComponent,
+    DrugsforsaleComponent,
+    ActionsComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,16 +49,22 @@ import { DataService } from './data.service';
     FormsModule,
     BrowserAnimationsModule,
     MatDialogModule,
+    MatGridListModule,
     MatButtonModule,
     MatCardModule,
     MatMenuModule,
     MatToolbarModule,
     MatIconModule,
+    MatInputModule,
+    MatTabsModule,
+    MatListModule,
+    MatCheckboxModule,
+    MatRadioModule
   ],
   entryComponents: [
-    GameWindowDialogComponent
+    InventoryComponent
   ],
-  providers: [GameService, DataService],
+  providers: [GameService, InventoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
