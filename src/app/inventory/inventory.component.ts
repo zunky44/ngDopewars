@@ -1,6 +1,4 @@
-import { Component, OnInit, Input, Inject } from '@angular/core';
-import { MatDialogRef } from '@angular/material';
-import { InventoryService } from '../inventory.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'ngdw-inventory',
@@ -10,10 +8,8 @@ import { InventoryService } from '../inventory.service';
 export class InventoryComponent implements OnInit {
   inventory: string[];
 
-  constructor(private inventoryData: InventoryService) { }
-
+  constructor() { }
 
   ngOnInit() {
-    this.inventoryData.currentInventory.subscribe(inventory => this.inventory = inventory);
   }
 }

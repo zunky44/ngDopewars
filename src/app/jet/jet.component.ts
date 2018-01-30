@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GameService } from '../game.service';
+import { Game } from '../game';
 
 @Component({
   selector: 'ngdw-jet',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JetComponent implements OnInit {
 
-  constructor() { }
+  locations = this.gameService.game.getValue().locations;
+  destination: string;
+
+  constructor(private gameService: GameService) { }
 
   ngOnInit() {
+    this.gameService.game.subscribe();
+  }
+
+  jet() {
+    this.gameService.game.getValue().currentLocation = this.destination;
+    this.gameService.game.getValue().tabIndex = 0;
   }
 
 }

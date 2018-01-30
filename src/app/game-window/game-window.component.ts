@@ -1,9 +1,7 @@
-import { Component, OnInit, Input, Inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { GameService } from '../game.service';
 import { Game } from '../game';
-import { MatDialog, MatDialogRef } from '@angular/material';
-import { InventoryService } from '../inventory.service';
-import { InventoryComponent } from '../inventory/inventory.component';
+import { MatTabChangeEvent } from '@angular/material';
 
 @Component({
   selector: 'ngdw-game-window',
@@ -12,38 +10,27 @@ import { InventoryComponent } from '../inventory/inventory.component';
 })
 export class GameWindowComponent implements OnInit {
 
-  newgame: Game;
   nameSubmitted: Boolean = false;
-  inventory: string[];
+  playername: string;
+  currentLocation: string;
 
-  constructor(private gameService: GameService, private inventoryData: InventoryService, public inventoryDialog: MatDialog) { }
+  constructor(private gameService: GameService) { }
 
   ngOnInit() {
-    this.getGame();
-    this.inventoryData.currentInventory.subscribe(inventory => this.inventory = inventory);
-  }
-
-  getGame(): void {
-    this.newgame = this.gameService.gameInit();
+    this.gameService.game.subscribe();
+    this.gameService.game.getValue().locations = ['Berlin', 'New York City', 'Tel Aviv',
+    'Hong-Kong', 'Amsterdam', 'Bogota', 'Cape Town', 'Sydney', 'Moscow', 'Los Angeles'];
+    this.gameService.game.getValue().currentLocation = 'New York City';
+    this.currentLocation = this.gameService.game.getValue().currentLocation;
+    this.gameService.game.getValue().tabIndex = 0;
   }
 
   submitName(): void {
     this.nameSubmitted = true;
+    this.gameService.setPlayerName(this.playername);
   }
 
-  addToInventory(item): void {
-    this.inventory.push(item);
-  }
-
-  openInventory() {
-
-    const inv = this.inventoryDialog.open(InventoryComponent, {
-      width: '50%'
-    });
-
-    // inv.afterClosed().subscribe(result => {
-    //   console.log('Dialog result: ${result}');
-    // });
-    this.inventoryData.changeInventory(this.inventory);
+  tabChanged = (tabChangeEvent: MatTabChangeEvent): void => {
+    this.gameService.game.getValue().tabIndex = tabChangeEvent.index;
   }
 }

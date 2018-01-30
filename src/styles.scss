@@ -45,6 +45,7 @@
 .title-center {
   margin: 0 auto;
   font-size: 20pt;
+  font-family: Raleway;
 }
 
 .description {
@@ -72,4 +73,27 @@
 .jet-radio-group {
   display: inline-flex;
   flex-direction: column;
+  text-align: left;
+  font-family: Raleway;
+}
+
+.destination {
+  margin-top: 10px;
+  text-align: left;
+}
+
+.entername {
+  font-family: Raleway;
+}
+
+.currentlocationTab {
+  font-family: Raleway;
+}
+
+.jetTab {
+  font-family: Raleway;
+}
+
+.mat-accent {
+  font-family: Raleway;
 }

@@ -1,4 +1,6 @@
 export class Game {
-  playername: string;
-  playerdrugs: string[];
+  public locations = [];
+  public currentLocation: string;
+  public tabIndex: number;
+  constructor( public playername: string ) { }
 }

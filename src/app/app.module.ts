@@ -20,7 +20,6 @@ import { MatButtonModule,
           MatTabsModule,
           MatListModule,
           MatRadioModule } from '@angular/material';
-import { InventoryService } from './inventory.service';
 import { JetComponent } from './jet/jet.component';
 import { CurrentlocationComponent } from './currentlocation/currentlocation.component';
 import { StatsComponent } from './stats/stats.component';
@@ -64,7 +63,7 @@ import { ActionsComponent } from './actions/actions.component';
   entryComponents: [
     InventoryComponent
   ],
-  providers: [GameService, InventoryService],
+  providers: [GameService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

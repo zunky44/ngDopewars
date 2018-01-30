@@ -7,20 +7,19 @@
       Buy low, sell high, and watch out for the cops!
     </div>  
     <form>
-      <label>Enter your name:</label>
       <mat-form-field>
-        <input matInput (keydown.enter)="submitName()" [(ngModel)]="newgame.playername"  value="Billy" >
+        <input class="entername" matInput (keydown.enter)="submitName()" [(ngModel)]="playername" name="playername" placeholder="Enter your name">
       </mat-form-field>
     </form>
-      <button mat-raised-button class="mat-accent" (click)="submitName()">OK</button>
+    <button mat-raised-button class="mat-accent" (click)="submitName()">OK</button>
   </div>
   <div *ngIf="nameSubmitted == true">
     <div class="welcome">
-      <h3>Welcome, {{newgame.playername}}!</h3>
+      <h3>Welcome, {{playername}}!</h3>
     </div>
-    <mat-tab-group>
-      <mat-tab label="Current Location"><ngdw-currentlocation></ngdw-currentlocation></mat-tab>
-      <mat-tab label="Jet!"><ngdw-jet></ngdw-jet></mat-tab>
+    <mat-tab-group selectedIndex={{this.gameService.game.getValue().tabIndex}} (selectedTabChange)="tabChanged($event)">
+      <mat-tab class="currentlocationTab" label={{this.gameService.game.getValue().currentLocation}} tabindex="0"><ngdw-currentlocation></ngdw-currentlocation></mat-tab>
+      <mat-tab class="jetTab" label="Jet!" tabindex="1"><ngdw-jet></ngdw-jet></mat-tab>
     </mat-tab-group>
   </div>
 </div>
