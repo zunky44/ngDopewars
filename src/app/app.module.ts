@@ -10,7 +10,7 @@ import { GameService } from './game.service';
 import { FormsModule } from '@angular/forms';
 import { InventoryComponent } from './inventory/inventory.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatDialogModule, MatGridListModule, MatCheckboxModule } from '@angular/material';
+import { MatDialogModule, MatGridListModule, MatCheckboxModule, MatTableModule } from '@angular/material';
 import { MatButtonModule,
           MatCardModule,
           MatMenuModule,
@@ -19,7 +19,9 @@ import { MatButtonModule,
           MatInputModule,
           MatTabsModule,
           MatListModule,
-          MatRadioModule } from '@angular/material';
+          MatRadioModule,
+          MatDividerModule,
+          MatSortModule } from '@angular/material';
 import { JetComponent } from './jet/jet.component';
 import { CurrentlocationComponent } from './currentlocation/currentlocation.component';
 import { StatsComponent } from './stats/stats.component';
@@ -58,7 +60,10 @@ import { ActionsComponent } from './actions/actions.component';
     MatTabsModule,
     MatListModule,
     MatCheckboxModule,
-    MatRadioModule
+    MatRadioModule,
+    MatDividerModule,
+    MatTableModule,
+    MatSortModule
   ],
   entryComponents: [
     InventoryComponent

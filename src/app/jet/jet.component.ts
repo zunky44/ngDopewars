@@ -23,6 +23,7 @@ export class JetComponent implements OnInit {
     this.gameService.game.getValue().currentLocation = this.destination;
     this.gameService.game.getValue().tabIndex = 0;
     this.currentLocation = this.destination;
+    this.destination = '';
   }
 
 }
