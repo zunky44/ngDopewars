@@ -20,6 +20,8 @@ export class GameWindowComponent implements OnInit {
     this.gameService.game.subscribe();
     this.gameService.game.getValue().locations = ['Berlin', 'New York City', 'Tel Aviv',
     'Hong-Kong', 'Amsterdam', 'Bogota', 'Cape Town', 'Sydney', 'Moscow', 'Los Angeles'];
+    this.gameService.game.getValue().drugstobuy = ['Weed', 'Speed', 'Etc'];
+    this.gameService.game.getValue().drugstosell = ['Weed', 'Speed', 'Etc'];
     this.gameService.game.getValue().currentLocation = 'New York City';
     this.currentLocation = this.gameService.game.getValue().currentLocation;
     this.gameService.game.getValue().tabIndex = 0;

@@ -27,7 +27,9 @@ import { CurrentlocationComponent } from './currentlocation/currentlocation.comp
 import { StatsComponent } from './stats/stats.component';
 import { LocationinfoComponent } from './locationinfo/locationinfo.component';
 import { DrugsforsaleComponent } from './drugsforsale/drugsforsale.component';
-import { ActionsComponent } from './actions/actions.component';
+import { TablesComponent } from './tables/tables.component';
+import { SelldrugsComponent } from './selldrugs/selldrugs.component';
+import { BuydrugsComponent } from './buydrugs/buydrugs.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { ActionsComponent } from './actions/actions.component';
     StatsComponent,
     LocationinfoComponent,
     DrugsforsaleComponent,
-    ActionsComponent,
+    TablesComponent,
+    SelldrugsComponent,
+    BuydrugsComponent,
   ],
   imports: [
     BrowserModule,

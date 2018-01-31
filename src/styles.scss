@@ -130,3 +130,21 @@
   font-family: Raleway;
   text-align: left;
 }
+
+.customWidthClass{
+  flex: 0 0 75px;
+}
+
+.buydrugsRadioGroup{
+  display: inline-flex;
+  flex-direction: column;
+  text-align: left;
+  font-family: Raleway;
+}
+
+.selldrugsRadioGroup{
+  display: inline-flex;
+  flex-direction: column;
+  text-align: left;
+  font-family: Raleway;
+}

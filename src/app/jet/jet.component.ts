@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { GameService } from '../game.service';
-import { Game } from '../game';
 
 @Component({
   selector: 'ngdw-jet',

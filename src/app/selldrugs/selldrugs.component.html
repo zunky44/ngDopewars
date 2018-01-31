@@ -1,0 +1,17 @@
+<div style="margin: 20px;">
+    <mat-card>
+      <mat-card-header>
+        Sell Drugs
+      </mat-card-header>
+      <mat-card-content style="margin: 10px;">
+        <mat-radio-group class="selldrugsRadioGroup" [(ngModel)]="drugtosell">
+          <mat-radio-button color= "primary" *ngFor="let drug of drugstosell" [value]="drug">
+            {{ drug }}
+          </mat-radio-button>
+        </mat-radio-group>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="accent">Sell</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>

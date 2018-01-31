@@ -16,7 +16,6 @@ export class DrugsforsaleComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }
 
 const DRUG_DATA: Drug[] = [
