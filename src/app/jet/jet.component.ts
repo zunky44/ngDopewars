@@ -11,6 +11,7 @@ export class JetComponent implements OnInit {
 
   locations = this.gameService.game.getValue().locations;
   destination: string;
+  currentLocation = this.gameService.game.getValue().currentLocation;
 
   constructor(private gameService: GameService) { }
 
