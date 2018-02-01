@@ -1,5 +1,4 @@
-import { Component, ViewChild, AfterViewInit } from '@angular/core';
-import { MatTableDataSource, MatSort } from '@angular/material';
+import { Component, OnInit } from '@angular/core';
 import { Drug } from '../drug';
 
 @Component({
@@ -8,16 +7,13 @@ import { Drug } from '../drug';
   styleUrls: ['./drugsforsale.component.css']
 })
 
-export class DrugsforsaleComponent implements AfterViewInit {
+export class DrugsforsaleComponent implements OnInit {
 
   displayedColumns = ['name', 'price'];
-  dataSource = new MatTableDataSource<Drug>(DRUG_DATA);
+  drugsforsale = DRUG_DATA;
   constructor() { }
 
-  @ViewChild(MatSort) sort: MatSort;
-
-  ngAfterViewInit() {
-    this.dataSource.sort = this.sort;
+  ngOnInit() {
   }
 
 }
