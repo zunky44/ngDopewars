@@ -6,7 +6,6 @@
 * {
   box-sizing: border-box;
 }
-
 .mat-toolbar {
   font-family: Raleway;
   font-size: 25pt;
@@ -58,7 +57,7 @@
   text-align: center;
 }
 
-.jetcard {
+.jet-card {
   width: 400px;
   align-self: center;
 }
@@ -186,4 +185,8 @@
 
 .location-info {
   text-align: center;
+}
+
+.purchase-button {
+  align-content: flex-end;
 }

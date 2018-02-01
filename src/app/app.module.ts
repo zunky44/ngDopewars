@@ -31,6 +31,7 @@ import { TablesComponent } from './tables/tables.component';
 import { SelldrugsComponent } from './selldrugs/selldrugs.component';
 import { BuydrugsComponent } from './buydrugs/buydrugs.component';
 import {PendingChangesGuard} from './guard';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -69,7 +70,8 @@ import {PendingChangesGuard} from './guard';
     MatRadioModule,
     MatDividerModule,
     MatTableModule,
-    MatSortModule
+    MatSortModule,
+    FlexLayoutModule
   ],
   entryComponents: [
     InventoryComponent

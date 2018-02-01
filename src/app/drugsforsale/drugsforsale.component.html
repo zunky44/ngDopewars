@@ -4,12 +4,17 @@
 <div style="float: left;" class="col-12">
   <div class="col-6">
     <mat-card>
-      <mat-list>
-        <mat-list-item *ngFor="let drug of drugsforsale">{{drug.name}} {{drug.price}}</mat-list-item>
-      </mat-list>
+      <mat-selection-list>
+        <mat-list-option *ngFor="let drug of drugsforsale">{{drug.name}} {{drug.price}}</mat-list-option>
+      </mat-selection-list>
+      <mat-card-actions>
+        <div class="container">
+          <div fxLayout="row" fxLayoutAlign="start center" class="content">
+            <div class="blocks" fxFlex= "80%"></div>
+            <button mat-raised-button color="accent">Purchase</button>
+          </div>
+        </div>
+      </mat-card-actions>
     </mat-card>
-  </div>
-  <div style="float: left;" class="col-6">
-    <ngdw-buydrugs></ngdw-buydrugs>
   </div>
 </div>
