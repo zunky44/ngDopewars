@@ -1,25 +1,13 @@
 <div class="stats col-12">
-  <mat-grid-list cols="3" rowHeight="150px">
-    <mat-grid-tile colspan="1">
-      <mat-list>
-        <mat-list-item>Date: 1/{{this.gameService.date}}/83</mat-list-item>
-        <mat-list-item>Cash: {{this.gameService.playerMoney}}</mat-list-item>
-        <mat-list-item>Debt: {{this.gameService.playerDebt}}</mat-list-item>
-      </mat-list>
-    </mat-grid-tile>
-    <mat-grid-tile colspan="1">
-      <mat-list>
-        <mat-list-item>Space: {{this.gameService.space}}</mat-list-item>
-        <mat-list-item>Bank: {{this.gameService.bank}}</mat-list-item>
-        <mat-list-item>Health: {{this.gameService.health}}</mat-list-item>
-      </mat-list>
-    </mat-grid-tile>
-    <mat-grid-tile colspan="1">
-      <mat-list>
-        <mat-list-item>Gun: {{this.gameService.gun}}</mat-list-item>
-        <mat-list-item>Bitches: {{this.gameService.bitches}}</mat-list-item>
-        <mat-list-item>Gross: {{this.gameService.gross}}</mat-list-item>
-      </mat-list>  
-    </mat-grid-tile>
-  </mat-grid-list>
+  <mat-list dense>
+    <mat-list-item>Date: 1/{{this.gameService.date}}/83</mat-list-item>
+    <mat-list-item>Cash: {{this.gameService.playerMoney}}</mat-list-item>
+    <mat-list-item>Debt: {{this.gameService.playerDebt}}</mat-list-item>
+    <mat-list-item>Space: {{this.gameService.space}}</mat-list-item>
+    <mat-list-item>Bank: {{this.gameService.bank}}</mat-list-item>
+    <mat-list-item>Health: {{this.gameService.health}}</mat-list-item>
+    <mat-list-item>Gun: {{this.gameService.gun}}</mat-list-item>
+    <mat-list-item>Bitches: {{this.gameService.bitches}}</mat-list-item>
+    <mat-list-item>Gross: {{this.gameService.gross}}</mat-list-item>
+  </mat-list>  
 </div>
