@@ -1,6 +1,6 @@
 <mat-card class="jetcard col-12">
   <mat-card-header>
-    <div class="jet-title">
+    <div class="jet-title col-12">
       {{ currentLocation }} Airport
     </div>
   </mat-card-header>
@@ -10,7 +10,7 @@
           {{location}}
         </mat-radio-button>
       </mat-radio-group>
-      <div class="destination">Destination: {{destination}}</div>
+      <div class="destination col-12">Destination: {{destination}}</div>
   </mat-card-content>
   <mat-card-actions>
     <button mat-raised-button color="accent" (click)='jet()'>JET!</button>

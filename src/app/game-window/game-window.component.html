@@ -1,6 +1,6 @@
 <div class='game-window col-12'>
   <div *ngIf="nameSubmitted == false">
-    <div class="description col-12">
+    <div class="description">
       International Dopewars is a clone of the MS-DOS game, Drug Wars, by John E. Dell. It was developed in Angular.
       <br>
       The goal of the game is to pay off the loanshark and make as much money as possible before the end of the month.
@@ -18,8 +18,8 @@
       <h4>Welcome, {{playername}}!</h4>
     </div>
     <mat-tab-group selectedIndex={{this.gameService.game.getValue().tabIndex}} (selectedTabChange)="tabChanged($event)">
-      <mat-tab class="col-12" label={{this.gameService.game.getValue().currentLocation}} tabindex="0"><ngdw-currentlocation></ngdw-currentlocation></mat-tab>
-      <mat-tab class="col-12" label="Jet!" tabindex="1"><ngdw-jet></ngdw-jet></mat-tab>
+      <mat-tab label={{this.gameService.game.getValue().currentLocation}} tabindex="0"><ngdw-currentlocation></ngdw-currentlocation></mat-tab>
+      <mat-tab label="Jet!" tabindex="1"><ngdw-jet></ngdw-jet></mat-tab>
     </mat-tab-group>
   </div>
 </div>

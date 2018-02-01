@@ -44,10 +44,9 @@
 }
 
 .title-center {
-  margin: 0 auto;
   font-size: 20pt;
   font-family: Raleway;
-  text-align: center;
+  text-align: left;
 }
 
 .description {
@@ -162,7 +161,7 @@
 }
 [class*="col-"] {
   float: left;
-  padding: 15px;
+  padding: 10px;
 }
 
 /* For mobile phones: */
