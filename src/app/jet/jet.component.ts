@@ -16,13 +16,13 @@ export class JetComponent implements OnInit {
 
   ngOnInit() {
     this.gameService.game.subscribe();
+    this.destination = 'New York City';
   }
 
   jet() {
     this.gameService.game.getValue().currentLocation = this.destination;
     this.gameService.game.getValue().tabIndex = 0;
     this.currentLocation = this.destination;
-    this.destination = '';
   }
 
 }
