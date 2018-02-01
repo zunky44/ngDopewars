@@ -20,7 +20,7 @@
   margin-top: 10px;
 }
 
-.footerlinks {
+.footer-links {
   font-family: Raleway;
   font-size: 10pt;
   text-align: center;
@@ -34,10 +34,9 @@
   margin-bottom: 30%;
 }
 
-.gamewindow {
+.game-window {
   font-family: Raleway;
   font-size: 12pt;
-  text-align: center;
 }
 
 .mat-raised-button {
@@ -57,7 +56,7 @@
 }
 
 .welcome {
-  text-align: left;
+  text-align: center;
 }
 
 .jetcard {
@@ -89,7 +88,7 @@
   font-family: Raleway;
 }
 
-.currentlocationTab {
+.current-location-tab {
   font-family: Raleway;
 }
 
@@ -184,4 +183,8 @@
   .col-10 {width: 83.33%;}
   .col-11 {width: 91.66%;}
   .col-12 {width: 100%;}
+}
+
+.location-info {
+  text-align: center;
 }
