@@ -20,7 +20,7 @@ export class InventoryComponent implements OnInit {
 
 const DRUG_DATA: Drug[] = [
   {name: 'Weed', price: 23},
-  {name: 'Weed', price: 2234},
+  {name: 'Weedwwwwwwwwwww', price: 2234},
   {name: 'Weed', price: 267},
   {name: 'Weed', price: 212},
   {name: 'Weed', price: 2423},
