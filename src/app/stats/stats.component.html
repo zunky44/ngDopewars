@@ -2,23 +2,23 @@
   <mat-grid-list cols="3" rowHeight="150px">
     <mat-grid-tile colspan="1">
       <mat-list>
-        <mat-list-item>Stats</mat-list-item>
-        <mat-list-item>Stats</mat-list-item>
-        <mat-list-item>Stats</mat-list-item>
+        <mat-list-item>Date: 1/{{this.gameService.game.getValue().date}}/83</mat-list-item>
+        <mat-list-item>Cash: {{this.gameService.game.getValue().playerMoney}}</mat-list-item>
+        <mat-list-item>Debt: {{this.gameService.game.getValue().playerDebt}}</mat-list-item>
       </mat-list>
     </mat-grid-tile>
     <mat-grid-tile colspan="1">
       <mat-list>
-        <mat-list-item>Stats</mat-list-item>
-        <mat-list-item>Stats</mat-list-item>
-        <mat-list-item>Stats</mat-list-item>
+        <mat-list-item>Space: {{this.gameService.game.getValue().space}}</mat-list-item>
+        <mat-list-item>Bank: {{this.gameService.game.getValue().bank}}</mat-list-item>
+        <mat-list-item>Health: {{this.gameService.game.getValue().health}}</mat-list-item>
       </mat-list>
     </mat-grid-tile>
     <mat-grid-tile colspan="1">
       <mat-list>
-        <mat-list-item>Stats</mat-list-item>
-        <mat-list-item>Stats</mat-list-item>
-        <mat-list-item>Stats</mat-list-item>
+        <mat-list-item>Gun: {{this.gameService.game.getValue().gun}}</mat-list-item>
+        <mat-list-item>Bitches: {{this.gameService.game.getValue().bitches}}</mat-list-item>
+        <mat-list-item>Gross: {{this.gameService.game.getValue().gross}}</mat-list-item>
       </mat-list>  
     </mat-grid-tile>
   </mat-grid-list>
