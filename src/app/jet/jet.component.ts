@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GameService } from '../game.service';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { PoliceDialogComponent } from '../police-dialog/police-dialog.component';
 
 @Component({
   selector: 'ngdw-jet',
@@ -12,7 +14,7 @@ export class JetComponent implements OnInit {
   destination: string;
   currentLocation = this.gameService.currentLocation;
 
-  constructor(public gameService: GameService) { }
+  constructor(public gameService: GameService, public dialog: MatDialog) { }
 
   ngOnInit() {
     this.destination = 'New York City';
@@ -24,4 +26,21 @@ export class JetComponent implements OnInit {
     this.currentLocation = this.destination;
   }
 
+  openDialog(): void {
+    const policeRoll = Math.floor(Math.random() * 6);
+    console.log(policeRoll);
+    if (policeRoll === 5) {
+      const policeDialog = this.dialog.open(PoliceDialogComponent, {
+        width: '100%',
+        data: {},
+        disableClose: true
+      });
+
+      policeDialog.afterClosed().subscribe(result => {
+        console.log('The dialog was closed');
+      });
+    }
+
+    this.jet();
+  }
 }

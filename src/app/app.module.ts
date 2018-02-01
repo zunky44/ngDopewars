@@ -32,6 +32,7 @@ import { SelldrugsComponent } from './selldrugs/selldrugs.component';
 import { BuydrugsComponent } from './buydrugs/buydrugs.component';
 import {PendingChangesGuard} from './guard';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { PoliceDialogComponent } from './police-dialog/police-dialog.component';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     TablesComponent,
     SelldrugsComponent,
     BuydrugsComponent,
+    PoliceDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,7 +76,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     FlexLayoutModule
   ],
   entryComponents: [
-    InventoryComponent
+    PoliceDialogComponent,
+    JetComponent,
+    BuydrugsComponent,
+    DrugsforsaleComponent,
+    InventoryComponent,
+    SelldrugsComponent
   ],
   providers: [GameService, PendingChangesGuard],
   bootstrap: [AppComponent]

@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { GameService } from '../game.service';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+
 
 @Component({
   selector: 'ngdw-selldrugs',
@@ -8,9 +10,14 @@ import { GameService } from '../game.service';
 })
 export class SelldrugsComponent implements OnInit {
   drugtosell: string;
-  constructor(private gameService: GameService) { }
+  constructor(private gameService: GameService, public selldrugsDialog: MatDialogRef<SelldrugsComponent>,
+  @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
   }
+  onCloseClick(): void {
+    this.selldrugsDialog.close();
+  }
+
 
 }

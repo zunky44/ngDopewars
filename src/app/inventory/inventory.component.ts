@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Drug } from '../drug';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { SelldrugsComponent } from '../selldrugs/selldrugs.component';
 
 @Component({
   selector: 'ngdw-inventory',
@@ -10,9 +12,22 @@ import { Drug } from '../drug';
 export class InventoryComponent implements OnInit {
   drugsinventory = DRUG_DATA;
   displayedColumns = ['name', 'price'];
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {}
+
+  openDialog() {
+    const selldrugsDialog = this.dialog.open(SelldrugsComponent, {
+      width: '100%',
+      data: {},
+      disableClose: true
+    });
+
+    selldrugsDialog.afterClosed().subscribe(result => {
+      console.log('The dialog was closed.');
+    });
+  }
+
 }
 
 
