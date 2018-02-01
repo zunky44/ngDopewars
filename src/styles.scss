@@ -190,3 +190,8 @@
 .purchase-button {
   align-content: flex-end;
 }
+
+.blocks {
+  display: flex;
+  flex-wrap: wrap-reverse;
+}
