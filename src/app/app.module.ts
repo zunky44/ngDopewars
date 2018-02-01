@@ -30,6 +30,8 @@ import { DrugsforsaleComponent } from './drugsforsale/drugsforsale.component';
 import { TablesComponent } from './tables/tables.component';
 import { SelldrugsComponent } from './selldrugs/selldrugs.component';
 import { BuydrugsComponent } from './buydrugs/buydrugs.component';
+import {PendingChangesGuard} from './guard';
+
 
 @NgModule({
   declarations: [
@@ -72,7 +74,7 @@ import { BuydrugsComponent } from './buydrugs/buydrugs.component';
   entryComponents: [
     InventoryComponent
   ],
-  providers: [GameService],
+  providers: [GameService, PendingChangesGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
