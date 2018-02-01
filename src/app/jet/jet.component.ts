@@ -8,20 +8,19 @@ import { GameService } from '../game.service';
 })
 export class JetComponent implements OnInit {
 
-  locations = this.gameService.game.getValue().locations;
+  locations = this.gameService.locations;
   destination: string;
-  currentLocation = this.gameService.game.getValue().currentLocation;
+  currentLocation = this.gameService.currentLocation;
 
-  constructor(private gameService: GameService) { }
+  constructor(public gameService: GameService) { }
 
   ngOnInit() {
-    this.gameService.game.subscribe();
     this.destination = 'New York City';
   }
 
   jet() {
-    this.gameService.game.getValue().currentLocation = this.destination;
-    this.gameService.game.getValue().tabIndex = 0;
+    this.gameService.currentLocation = this.destination;
+    this.gameService.tabIndex = 0;
     this.currentLocation = this.destination;
   }
 

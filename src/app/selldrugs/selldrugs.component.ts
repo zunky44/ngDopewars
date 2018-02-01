@@ -7,7 +7,6 @@ import { GameService } from '../game.service';
   styleUrls: ['./selldrugs.component.scss']
 })
 export class SelldrugsComponent implements OnInit {
-  drugstosell = this.gameService.game.getValue().drugstosell;
   drugtosell: string;
   constructor(private gameService: GameService) { }
 

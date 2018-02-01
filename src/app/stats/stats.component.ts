@@ -11,7 +11,6 @@ export class StatsComponent implements OnInit {
   constructor(public gameService: GameService) { }
 
   ngOnInit() {
-    this.gameService.game.subscribe();
   }
 
 }

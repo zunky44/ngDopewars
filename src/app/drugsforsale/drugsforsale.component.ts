@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Drug } from '../drug';
+import { GameService } from '../game.service';
+
 
 @Component({
   selector: 'ngdw-drugsforsale',
@@ -11,9 +13,13 @@ export class DrugsforsaleComponent implements OnInit {
 
   displayedColumns = ['name', 'price'];
   drugsforsale = DRUG_DATA;
-  constructor() { }
+  constructor(public gameService: GameService) { }
 
   ngOnInit() {
+  }
+
+  addCash(amount) {
+    this.gameService.playerMoney += amount;
   }
 
 }
