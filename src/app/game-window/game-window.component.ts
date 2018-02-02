@@ -18,6 +18,8 @@ export class GameWindowComponent implements OnInit, PendingChangesGuard {
   constructor(public gameService: GameService) { }
 
   ngOnInit() {
+    this.gameService.popDrugs();
+
   }
 
   submitName(): void {
@@ -28,12 +30,12 @@ export class GameWindowComponent implements OnInit, PendingChangesGuard {
     this.gameService.tabIndex = tabChangeEvent.index;
   }
 
-      // @HostListener allows us to also guard against browser refresh, close, etc.
-      @HostListener('window:beforeunload')
-      canDeactivate(): Observable<boolean> | boolean {
-        // insert logic to check if there are pending changes here;
-        // returning true will navigate without confirmation
-        // returning false will show a confirm dialog before navigating away
-        return false;
-      }
+  // @HostListener allows us to also guard against browser refresh, close, etc.
+  @HostListener('window:beforeunload')
+  canDeactivate(): Observable<boolean> | boolean {
+  // insert logic to check if there are pending changes here;
+  // returning true will navigate without confirmation
+  // returning false will show a confirm dialog before navigating away
+  return false;
+  }
 }

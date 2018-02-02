@@ -1,4 +1,11 @@
-export interface Drug {
+export class Drug {
   name: string;
-  price: number;
+  minprice: number;
+  maxprice: number;
+  canbeExpensive: boolean;
+  canbeCheap: boolean;
+
+  constructor(name: string) {
+    this.name = name;
+  }
 }

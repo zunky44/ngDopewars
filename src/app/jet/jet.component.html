@@ -6,7 +6,7 @@
   </mat-card-header>
   <mat-card-content>
       <mat-radio-group class="jet-radio-group" [(ngModel)]="destination">
-        <mat-radio-button class="jet-radio-button" color="primary" *ngFor="let location of locations" [value]="location">
+        <mat-radio-button class="jet-radio-button" color="primary" *ngFor="let location of locationNames" [value]="location">
           {{location}}
         </mat-radio-button>
       </mat-radio-group>

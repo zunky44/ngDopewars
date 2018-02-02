@@ -10,7 +10,6 @@ import { SelldrugsComponent } from '../selldrugs/selldrugs.component';
 })
 
 export class InventoryComponent implements OnInit {
-  drugsinventory = DRUG_DATA;
   displayedColumns = ['name', 'price'];
   constructor(public dialog: MatDialog) { }
 
@@ -31,14 +30,3 @@ export class InventoryComponent implements OnInit {
 }
 
 
-
-
-const DRUG_DATA: Drug[] = [
-  {name: 'Weed', price: 23},
-  {name: 'Weedwwwwwwwwwww', price: 2234},
-  {name: 'Weed', price: 267},
-  {name: 'Weed', price: 212},
-  {name: 'Weed', price: 2423},
-  {name: 'Weed', price: 243},
-  {name: 'Weed', price: 56},
-];

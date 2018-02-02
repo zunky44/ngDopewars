@@ -10,7 +10,7 @@ import { PoliceDialogComponent } from '../police-dialog/police-dialog.component'
 })
 export class JetComponent implements OnInit {
 
-  locations = this.gameService.locations;
+  locationNames = this.gameService.locationNames;
   destination: string;
   currentLocation = this.gameService.currentLocation;
 

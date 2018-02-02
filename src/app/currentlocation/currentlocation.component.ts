@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GameService } from '../game.service';
 
 @Component({
   selector: 'ngdw-currentlocation',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CurrentlocationComponent implements OnInit {
 
-  constructor() { }
+  constructor(public gameService: GameService) { }
 
   ngOnInit() {
   }

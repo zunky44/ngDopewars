@@ -14,7 +14,6 @@ import { BuydrugsComponent } from '../buydrugs/buydrugs.component';
 export class DrugsforsaleComponent implements OnInit {
 
   displayedColumns = ['name', 'price'];
-  drugsforsale = DRUG_DATA;
   constructor(public gameService: GameService, public dialog: MatDialog) { }
 
   ngOnInit() {
@@ -35,15 +34,4 @@ export class DrugsforsaleComponent implements OnInit {
       console.log('The dialog was closed.');
     });
   }
-
 }
-
-const DRUG_DATA: Drug[] = [
-  {name: 'Weed', price: 23},
-  {name: 'Weed', price: 2234},
-  {name: 'Weed', price: 267},
-  {name: 'Weed', price: 212},
-  {name: 'Weed', price: 2423},
-  {name: 'Weed', price: 243},
-  {name: 'Weed', price: 56},
-];

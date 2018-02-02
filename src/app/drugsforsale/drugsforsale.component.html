@@ -5,7 +5,7 @@
   <div>
     <mat-card>
       <mat-selection-list>
-        <mat-list-option *ngFor="let drug of drugsforsale">{{drug.name}} {{drug.price}}</mat-list-option>
+        <mat-list-option *ngFor="let drug of this.gameService.drugs">{{drug.name}}</mat-list-option>
       </mat-selection-list>
       <mat-card-actions>
         <div class="container">
