@@ -24,11 +24,11 @@ export class JetComponent implements OnInit {
     this.gameService.currentLocation = this.destination;
     this.gameService.tabIndex = 0;
     this.currentLocation = this.destination;
+
   }
 
   openDialog(): void {
     const policeRoll = Math.floor(Math.random() * 6);
-    console.log(policeRoll);
     if (policeRoll === 5) {
       const policeDialog = this.dialog.open(PoliceDialogComponent, {
         width: '100%',
@@ -40,7 +40,9 @@ export class JetComponent implements OnInit {
         console.log('The dialog was closed');
       });
     }
+    // this.gameService.getDrugsForSale();
 
     this.jet();
   }
+
 }

@@ -1,5 +1,8 @@
 export class Location {
   name: string;
-  policePresence: number;
   numDrugs: number;
+
+  constructor(name) {
+    this.name = name;
+  }
 }

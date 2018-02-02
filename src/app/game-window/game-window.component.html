@@ -15,7 +15,7 @@
   </div>
   <div *ngIf="nameSubmitted == true">
     <div class="welcome">
-      <h4>Welcome, {{playername}}!</h4>
+      <h4>Welcome, {{ playername }}!</h4>
     </div>
     <mat-tab-group selectedIndex={{this.gameService.tabIndex}} (selectedTabChange)="tabChanged($event)">
       <mat-tab label={{this.gameService.currentLocation}} tabindex="0"><ngdw-currentlocation></ngdw-currentlocation></mat-tab>

@@ -19,9 +19,7 @@ export class DrugsforsaleComponent implements OnInit {
   ngOnInit() {
   }
 
-  addCash(amount) {
-    this.gameService.playerMoney += amount;
-  }
+
 
   openDialog() {
     const buydrugsDialog = this.dialog.open(BuydrugsComponent, {
