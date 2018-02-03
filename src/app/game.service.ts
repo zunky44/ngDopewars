@@ -26,6 +26,11 @@ export class GameService {
   drugNames = ['Speed', 'Peyote', 'Weed', 'Hashish', 'Ludes', 'Heroin', 'Acid', 'Shrooms', 'Cocaine',
   'Ketamine', 'PCP', 'Molly', 'Opium'];
   drugs = {};
+  drugPrices = [];
+  drugsAndPrices = [];
+  drugsToBuy = [];
+  buyDrugQuants = [];
+  buyDrugTotal = 0;
 
   constructor() {
   }
@@ -86,13 +91,55 @@ export class GameService {
     }
   }
   getDrugsForSale() {
-    this.drugsforSale = [];
-    while (this.drugsforSale.length < this.locations[this.currentLocation].numDrugs) {
-      const i = Math.floor(Math.random() * ((this.locations[this.currentLocation].numDrugs - 1) - 0) + 0);
-      const randomdrug = this.drugNames[i];
-      if (!(randomdrug in this.drugsforSale)) {
-        this.drugsforSale.push(randomdrug);
+    let max = this.drugNames.length;
+    let result = this.drugNames.slice(0);
+    for (let i = 0; i < 30; i++) {
+        let source = Math.floor(Math.random() * (max - 1) - 0);
+        let dest = Math.floor(Math.random() * (max - 1) - 0);
+        let aux = result[source];
+        result[source] = result[dest];
+        result[dest] = aux;
+    }
+
+    this.drugsforSale = result.slice(0, this.locations[this.currentLocation].numDrugs);
+  }
+  getDrugPrices() {
+    this.drugPrices = [];
+
+    for (const drug of Object.values(this.drugsforSale)) {
+      const min = this.drugs[drug].minprice;
+      const max = this.drugs[drug].maxprice;
+      const randnum = Math.floor(Math.random() * (max - min + 1) + min);
+      this.drugPrices.push(randnum);
+    }
+  }
+
+  mergeDrugsPrices() {
+    this.drugsAndPrices = [];
+    for (let i = 0; i < this.drugsforSale.length; i++) {
+      this.drugsAndPrices.push({drug: this.drugsforSale[i], price: this.drugPrices[i]});
+    }
+  }
+  calculateOrderTotal() {
+    this.buyDrugTotal = 0;
+
+    for (let i = 0; i < this.drugsToBuy.length; i++) {
+      if (this.buyDrugQuants[i] === null) { this.buyDrugQuants[i] = 1;
       }
+      if (this.buyDrugQuants[i] < 1) {
+        this.buyDrugQuants[i] = 1;
+      }
+      if (this.buyDrugQuants[i] === undefined) {
+        this.buyDrugQuants[i] = 1;
+      }
+    }
+    console.log(this.buyDrugQuants + 'quants');
+    for (const i of Object.values(this.drugsToBuy)) { console.log(i.price); }
+    for (let i = 0; i < this.drugsToBuy.length; i++) {
+      const subtotal = this.drugsToBuy[i].price * this.buyDrugQuants[i];
+      this.buyDrugTotal += subtotal;
+      console.log(subtotal, this.buyDrugTotal);
     }
   }
 }
+

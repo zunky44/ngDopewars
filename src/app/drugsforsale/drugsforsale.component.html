@@ -4,8 +4,8 @@
 <div style="float: left;" class="col-12">
   <div>
     <mat-card>
-      <mat-selection-list>
-        <mat-list-option *ngFor="let drug of this.gameService.drugsforSale">{{drug}}</mat-list-option>
+      <mat-selection-list [(ngModel)]="this.gameService.drugsToBuy">
+        <mat-list-option *ngFor="let drug of this.gameService.drugsAndPrices" [value]="drug"> {{drug.drug}} {{drug.price}}  </mat-list-option>
       </mat-selection-list>
       <mat-card-actions>
         <div class="container">

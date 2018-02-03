@@ -14,6 +14,7 @@ import { BuydrugsComponent } from '../buydrugs/buydrugs.component';
 export class DrugsforsaleComponent implements OnInit {
 
   displayedColumns = ['name', 'price'];
+  drugsForSaleList = this.gameService.drugsforSale.concat(this.gameService.drugPrices);
   constructor(public gameService: GameService, public dialog: MatDialog) { }
 
   ngOnInit() {
@@ -22,8 +23,10 @@ export class DrugsforsaleComponent implements OnInit {
 
 
   openDialog() {
+    this.gameService.buyDrugQuants = [];
     const buydrugsDialog = this.dialog.open(BuydrugsComponent, {
       width: '100%',
+      height: '100%',
       data: {},
       disableClose: true,
     });

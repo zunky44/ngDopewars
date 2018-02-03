@@ -1,1 +1,20 @@
-<button mat-raised-button color='accent' (click)='onCloseClick()'>Close</button>
+<mat-card class = "buy-drugs-card">
+  <mat-list>
+    <mat-list-item *ngFor="let drug of this.gameService.drugsToBuy; let n=index">{{drug.drug}} {{drug.price}}
+      <mat-slider thumbLabel min="1" [(ngModel)]="this.gameService.buyDrugQuants[n]" 
+        (change)="this.gameService.calculateOrderTotal()" [value]= "1"></mat-slider>
+    </mat-list-item>
+  </mat-list>
+  <br>
+  <div fxFlex="100%" fxLayoutAlign="start center">
+    Total: {{this.gameService.buyDrugTotal}}
+  </div>
+
+
+  <mat-card-actions>
+    
+        <button mat-raised-button color='accent' (click)='onPurchaseClick()'>Purchase</button>
+        <button mat-raised-button color='accent' (click)='onCloseClick()'>Close</button>
+
+  </mat-card-actions>
+</mat-card>

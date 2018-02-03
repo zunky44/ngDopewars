@@ -10,7 +10,7 @@ import { GameService } from './game.service';
 import { FormsModule } from '@angular/forms';
 import { InventoryComponent } from './inventory/inventory.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatDialogModule, MatGridListModule, MatCheckboxModule, MatTableModule } from '@angular/material';
+import { MatDialogModule, MatGridListModule, MatCheckboxModule, MatTableModule, MatSliderModule } from '@angular/material';
 import { MatButtonModule,
           MatCardModule,
           MatMenuModule,
@@ -21,7 +21,8 @@ import { MatButtonModule,
           MatListModule,
           MatRadioModule,
           MatDividerModule,
-          MatSortModule } from '@angular/material';
+          MatSortModule ,
+          MatSelectModule} from '@angular/material';
 import { JetComponent } from './jet/jet.component';
 import { CurrentlocationComponent } from './currentlocation/currentlocation.component';
 import { StatsComponent } from './stats/stats.component';
@@ -33,6 +34,8 @@ import { BuydrugsComponent } from './buydrugs/buydrugs.component';
 import {PendingChangesGuard} from './guard';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { PoliceDialogComponent } from './police-dialog/police-dialog.component';
+import { MergePipe } from './mergepipe';
+import 'hammerjs';
 
 
 @NgModule({
@@ -52,6 +55,7 @@ import { PoliceDialogComponent } from './police-dialog/police-dialog.component';
     SelldrugsComponent,
     BuydrugsComponent,
     PoliceDialogComponent,
+    MergePipe
   ],
   imports: [
     BrowserModule,
@@ -73,7 +77,9 @@ import { PoliceDialogComponent } from './police-dialog/police-dialog.component';
     MatDividerModule,
     MatTableModule,
     MatSortModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatSelectModule,
+    MatSliderModule
   ],
   entryComponents: [
     PoliceDialogComponent,

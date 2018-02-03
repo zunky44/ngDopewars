@@ -40,7 +40,9 @@ export class JetComponent implements OnInit {
         console.log('The dialog was closed');
       });
     }
-    // this.gameService.getDrugsForSale();
+    this.gameService.getDrugsForSale();
+    this.gameService.getDrugPrices();
+    this.gameService.mergeDrugsPrices();
 
     this.jet();
   }

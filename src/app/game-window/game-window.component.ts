@@ -18,8 +18,11 @@ export class GameWindowComponent implements OnInit, PendingChangesGuard {
   constructor(public gameService: GameService) { }
 
   ngOnInit() {
-    // this.gameService.popDrugs();
-    // this.gameService.popLocations();
+     this.gameService.popDrugs();
+     this.gameService.popLocations();
+     this.gameService.getDrugsForSale();
+     this.gameService.getDrugPrices();
+     this.gameService.mergeDrugsPrices();
 
   }
 
