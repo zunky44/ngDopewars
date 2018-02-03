@@ -12,7 +12,7 @@ export class BuydrugsComponent implements OnInit {
   drugtobuy: string;
   orderTotal: number;
 
-  constructor(private gameService: GameService, public buydrugsDialog: MatDialogRef<BuydrugsComponent>,
+  constructor(public gameService: GameService, public buydrugsDialog: MatDialogRef<BuydrugsComponent>,
   @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
