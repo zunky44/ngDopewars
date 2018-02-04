@@ -4,9 +4,21 @@
 <div style="float: left;" class="col-12">
   <div>
     <mat-card>
-      <!-- <mat-selection-list>
-        <mat-list-option *ngFor="let drug of drugsinventory"> {{ drug.name }} </mat-list-option>
-      </mat-selection-list> -->
+      <mat-selection-list>
+        <mat-list-option>Acid: {{this.gameService.drugInventory['Acid'].Quantity}} </mat-list-option>
+        <mat-list-option>Cocaine: {{this.gameService.drugInventory['Cocaine'].Quantity}} </mat-list-option>
+        <mat-list-option>Hashish: {{this.gameService.drugInventory['Hashish'].Quantity}} </mat-list-option>
+        <mat-list-option>Heroin: {{this.gameService.drugInventory['Heroin'].Quantity}} </mat-list-option>
+        <mat-list-option>Ketamine: {{this.gameService.drugInventory['Ketamine'].Quantity}} </mat-list-option>
+        <mat-list-option>Ludes: {{this.gameService.drugInventory['Ludes'].Quantity}} </mat-list-option>
+        <mat-list-option>Molly: {{this.gameService.drugInventory['Molly'].Quantity}} </mat-list-option>
+        <mat-list-option>Opium: {{this.gameService.drugInventory['Opium'].Quantity}} </mat-list-option>
+        <mat-list-option>PCP: {{this.gameService.drugInventory['PCP'].Quantity}} </mat-list-option>
+        <mat-list-option>Peyote: {{this.gameService.drugInventory['Peyote'].Quantity}} </mat-list-option>
+        <mat-list-option>Shrooms: {{this.gameService.drugInventory['Shrooms'].Quantity}} </mat-list-option>
+        <mat-list-option>Speed: {{this.gameService.drugInventory['Speed'].Quantity}} </mat-list-option>
+        <mat-list-option>Weed: {{this.gameService.drugInventory['Weed'].Quantity}} </mat-list-option>
+      </mat-selection-list>
       <mat-card-actions class="purchase-button">
           <div class="container">
               <div fxLayout="row" fxLayoutAlign="start center" class="content">

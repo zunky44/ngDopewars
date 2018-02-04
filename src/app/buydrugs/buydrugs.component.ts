@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { GameService } from '../game.service';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { DrugsforsaleComponent } from '../drugsforsale/drugsforsale.component';
 
 @Component({
   selector: 'ngdw-buydrugs',
@@ -11,6 +12,7 @@ export class BuydrugsComponent implements OnInit {
 
   drugtobuy: string;
   orderTotal: number;
+
 
   constructor(public gameService: GameService, public buydrugsDialog: MatDialogRef<BuydrugsComponent>,
   @Inject(MAT_DIALOG_DATA) public data: any) { }
@@ -26,6 +28,9 @@ export class BuydrugsComponent implements OnInit {
   }
   onPurchaseClick(): void {
     this.buydrugsDialog.close();
+    this.gameService.playerMoney -= this.gameService.buyDrugTotal;
+    this.gameService.popDrugsPurchased();
+    this.gameService.addToInventory();
     this.gameService.buyDrugTotal = 0;
   }
 

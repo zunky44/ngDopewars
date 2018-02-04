@@ -31,6 +31,24 @@ export class GameService {
   drugsToBuy = [];
   buyDrugQuants = [];
   buyDrugTotal = 0;
+  buyMaxQuantity = [];
+  drugsPurchased = [];
+  drugInventory = {
+    Speed: {Name: 'Speed', Quantity: 0, Lpp: 0},
+    Peyote: {Name: 'Peyote', Quantity: 0, Lpp: 0},
+    Weed: {Name: 'Weed', Quantity: 0, Lpp: 0},
+    Hashish: {Name: 'Hashish', Quantity: 0, Lpp: 0},
+    Ludes: {Name: 'Ludes', Quantity: 0, Lpp: 0},
+    Heroin: {Name: 'Heroin', Quantity: 0, Lpp: 0},
+    Acid: {Name: 'Acid', Quantity: 0, Lpp: 0},
+    Shrooms: {Name: 'Shrooms', Quantity: 0, Lpp: 0},
+    Cocaine: {Name: 'Cocaine', Quantity: 0, Lpp: 0},
+    Ketamine: {Name: 'Ketamine', Quantity: 0, Lpp: 0},
+    PCP: {Name: 'PCP', Quantity: 0, Lpp: 0},
+    Molly: {Name: 'Molly', Quantity: 0, Lpp: 0},
+    Opium: {Name: 'Opium', Quantity: 0, Lpp: 0}
+  };
+
 
   constructor() {
   }
@@ -122,24 +140,40 @@ export class GameService {
   }
   calculateOrderTotal() {
     this.buyDrugTotal = 0;
+    this.buyMaxQuantity = [];
+    console.log(this.buyMaxQuantity);
 
     for (let i = 0; i < this.drugsToBuy.length; i++) {
-      if (this.buyDrugQuants[i] === null) { this.buyDrugQuants[i] = 1;
-      }
-      if (this.buyDrugQuants[i] < 1) {
-        this.buyDrugQuants[i] = 1;
+      if (this.buyDrugQuants[i] === null) { this.buyDrugQuants[i] = 0;
       }
       if (this.buyDrugQuants[i] === undefined) {
-        this.buyDrugQuants[i] = 1;
+        this.buyDrugQuants[i] = 0;
       }
     }
-    console.log(this.buyDrugQuants + 'quants');
-    for (const i of Object.values(this.drugsToBuy)) { console.log(i.price); }
     for (let i = 0; i < this.drugsToBuy.length; i++) {
       const subtotal = this.drugsToBuy[i].price * this.buyDrugQuants[i];
       this.buyDrugTotal += subtotal;
-      console.log(subtotal, this.buyDrugTotal);
+    }
+    for (let i = 0; i < this.drugsToBuy.length; i++) {
+      const cash = this.playerMoney - this.buyDrugTotal;
+      const price = this.drugsToBuy[i].price;
+      this.buyMaxQuantity.push(Math.floor(cash / price));
+    }
+  }
+  popDrugsPurchased() {
+    this.drugsPurchased = [];
+    for (let i = 0; i < this.drugsToBuy.length; i++) {
+      this.drugsPurchased.push({Drug: this.drugsToBuy[i], Quantity: this.buyDrugQuants[i]});
+    }
+  }
+  addToInventory() {
+    for (let i = 0; i < this.drugsPurchased.length; i++) {
+      if (this.drugsPurchased[i].Quantity > 0) {
+        this.drugInventory[this.drugsPurchased[i].Drug.drug].Quantity += this.drugsPurchased[i].Quantity;
+        this.drugInventory[this.drugsPurchased[i].Drug.drug].Lpp += this.drugsPurchased[i].Drug.price;
+      }
     }
   }
 }
+
 

@@ -1,7 +1,7 @@
 <mat-card class = "buy-drugs-card">
   <mat-list>
     <mat-list-item *ngFor="let drug of this.gameService.drugsToBuy; let n=index">{{drug.drug}} {{drug.price}}
-      <mat-slider thumbLabel min="1" [(ngModel)]="this.gameService.buyDrugQuants[n]" 
+      <mat-slider thumbLabel max="{{this.gameService.buyDrugQuants[n] + this.gameService.buyMaxQuantity[n]}}"[(ngModel)]="this.gameService.buyDrugQuants[n]" 
         (change)="this.gameService.calculateOrderTotal()" [value]= "1"></mat-slider>
     </mat-list-item>
   </mat-list>

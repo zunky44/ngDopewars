@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Drug } from '../drug';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { SelldrugsComponent } from '../selldrugs/selldrugs.component';
+import { GameService } from '../game.service';
 
 @Component({
   selector: 'ngdw-inventory',
@@ -11,7 +12,8 @@ import { SelldrugsComponent } from '../selldrugs/selldrugs.component';
 
 export class InventoryComponent implements OnInit {
   displayedColumns = ['name', 'price'];
-  constructor(public dialog: MatDialog) { }
+
+  constructor(public dialog: MatDialog, public gameService: GameService) { }
 
   ngOnInit() {}
 

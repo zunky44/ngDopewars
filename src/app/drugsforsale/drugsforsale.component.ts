@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Drug } from '../drug';
 import { GameService } from '../game.service';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatSelectionList } from '@angular/material';
 import { BuydrugsComponent } from '../buydrugs/buydrugs.component';
 
 
@@ -16,7 +16,8 @@ export class DrugsforsaleComponent implements OnInit {
   displayedColumns = ['name', 'price'];
   drugsForSaleList = this.gameService.drugsforSale.concat(this.gameService.drugPrices);
   constructor(public gameService: GameService, public dialog: MatDialog) { }
-
+  @ViewChild('dfs')
+  private dfs: MatSelectionList;
   ngOnInit() {
   }
 
@@ -32,7 +33,9 @@ export class DrugsforsaleComponent implements OnInit {
     });
 
     buydrugsDialog.afterClosed().subscribe(result => {
+      result = [];
       console.log('The dialog was closed.');
+      this.dfs.deselectAll();
     });
   }
 }
