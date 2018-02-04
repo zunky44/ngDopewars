@@ -10,7 +10,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 })
 export class SelldrugsComponent implements OnInit {
   drugtosell: string;
-  constructor(private gameService: GameService, public selldrugsDialog: MatDialogRef<SelldrugsComponent>,
+  constructor(public gameService: GameService, public selldrugsDialog: MatDialogRef<SelldrugsComponent>,
   @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {

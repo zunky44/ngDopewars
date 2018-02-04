@@ -4,7 +4,7 @@
 <div style="float: left;" class="col-12">
   <div>
     <mat-card>
-      <mat-selection-list [(ngModel)]="this.drugsToSell" #inv name="inv">
+      <mat-selection-list #inv name="inv">
         <mat-list-option>Acid: {{this.gameService.drugInventory['Acid'].Quantity}} @ {{this.gameService.drugInventory['Acid'].Lpp}}</mat-list-option>
         <mat-list-option>Cocaine: {{this.gameService.drugInventory['Cocaine'].Quantity}} @ {{this.gameService.drugInventory['Cocaine'].Lpp}}</mat-list-option>
         <mat-list-option>Hashish: {{this.gameService.drugInventory['Hashish'].Quantity}} @ {{this.gameService.drugInventory['Hashish'].Lpp}}</mat-list-option>
