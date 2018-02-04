@@ -5,27 +5,27 @@
   <div>
     <mat-card>
       <mat-list>
-        <mat-list-item style="font-size: 14px">Cash: {{this.gameService.playerMoney}} Space: {{this.gameService.space}} Debt: {{this.gameService.playerDebt}}</mat-list-item>
+        <mat-list-item style="font-size: 12px">Cash: {{this.gameService.playerMoney}} Space: {{this.gameService.space}} Debt: {{this.gameService.playerDebt}}</mat-list-item>
       </mat-list>
       <mat-selection-list #inv name="inv">
-        <mat-list-option>Acid: {{this.gameService.drugInventory['Acid'].Quantity}} @ {{this.gameService.drugInventory['Acid'].Lpp}}</mat-list-option>
-        <mat-list-option>Cocaine: {{this.gameService.drugInventory['Cocaine'].Quantity}} @ {{this.gameService.drugInventory['Cocaine'].Lpp}}</mat-list-option>
-        <mat-list-option>Hashish: {{this.gameService.drugInventory['Hashish'].Quantity}} @ {{this.gameService.drugInventory['Hashish'].Lpp}}</mat-list-option>
-        <mat-list-option>Heroin: {{this.gameService.drugInventory['Heroin'].Quantity}} @ {{this.gameService.drugInventory['Heroin'].Lpp}}</mat-list-option>
-        <mat-list-option>Ketamine: {{this.gameService.drugInventory['Ketamine'].Quantity}} @ {{this.gameService.drugInventory['Ketamine'].Lpp}}</mat-list-option>
-        <mat-list-option>Ludes: {{this.gameService.drugInventory['Ludes'].Quantity}} @ {{this.gameService.drugInventory['Ludes'].Lpp}}</mat-list-option>
-        <mat-list-option>Molly: {{this.gameService.drugInventory['Molly'].Quantity}} @ {{this.gameService.drugInventory['Molly'].Lpp}}</mat-list-option>
-        <mat-list-option>Opium: {{this.gameService.drugInventory['Opium'].Quantity}} @ {{this.gameService.drugInventory['Opium'].Lpp}}</mat-list-option>
-        <mat-list-option>PCP: {{this.gameService.drugInventory['PCP'].Quantity}} @ {{this.gameService.drugInventory['PCP'].Lpp}}</mat-list-option>
-        <mat-list-option>Peyote: {{this.gameService.drugInventory['Peyote'].Quantity}} @ {{this.gameService.drugInventory['Peyote'].Lpp}}</mat-list-option>
-        <mat-list-option>Shrooms: {{this.gameService.drugInventory['Shrooms'].Quantity}} @ {{this.gameService.drugInventory['Shrooms'].Lpp}}</mat-list-option>
-        <mat-list-option>Speed: {{this.gameService.drugInventory['Speed'].Quantity}} @ {{this.gameService.drugInventory['Speed'].Lpp}}</mat-list-option>
-        <mat-list-option>Weed: {{this.gameService.drugInventory['Weed'].Quantity}} @ {{this.gameService.drugInventory['Weed'].Lpp}}</mat-list-option>
+        <mat-list-option style="font-size: 14px">Acid: {{this.gameService.drugInventory['Acid'].Quantity}} @ {{this.gameService.drugInventory['Acid'].Lpp}}</mat-list-option>
+        <mat-list-option style="font-size: 14px">Cocaine: {{this.gameService.drugInventory['Cocaine'].Quantity}} @ {{this.gameService.drugInventory['Cocaine'].Lpp}}</mat-list-option>
+        <mat-list-option style="font-size: 14px">Hashish: {{this.gameService.drugInventory['Hashish'].Quantity}} @ {{this.gameService.drugInventory['Hashish'].Lpp}}</mat-list-option>
+        <mat-list-option style="font-size: 14px">Heroin: {{this.gameService.drugInventory['Heroin'].Quantity}} @ {{this.gameService.drugInventory['Heroin'].Lpp}}</mat-list-option>
+        <mat-list-option style="font-size: 14px">Ketamine: {{this.gameService.drugInventory['Ketamine'].Quantity}} @ {{this.gameService.drugInventory['Ketamine'].Lpp}}</mat-list-option>
+        <mat-list-option style="font-size: 14px">Ludes: {{this.gameService.drugInventory['Ludes'].Quantity}} @ {{this.gameService.drugInventory['Ludes'].Lpp}}</mat-list-option>
+        <mat-list-option style="font-size: 14px">Molly: {{this.gameService.drugInventory['Molly'].Quantity}} @ {{this.gameService.drugInventory['Molly'].Lpp}}</mat-list-option>
+        <mat-list-option style="font-size: 14px">Opium: {{this.gameService.drugInventory['Opium'].Quantity}} @ {{this.gameService.drugInventory['Opium'].Lpp}}</mat-list-option>
+        <mat-list-option style="font-size: 14px">PCP: {{this.gameService.drugInventory['PCP'].Quantity}} @ {{this.gameService.drugInventory['PCP'].Lpp}}</mat-list-option>
+        <mat-list-option style="font-size: 14px">Peyote: {{this.gameService.drugInventory['Peyote'].Quantity}} @ {{this.gameService.drugInventory['Peyote'].Lpp}}</mat-list-option>
+        <mat-list-option style="font-size: 14px">Shrooms: {{this.gameService.drugInventory['Shrooms'].Quantity}} @ {{this.gameService.drugInventory['Shrooms'].Lpp}}</mat-list-option>
+        <mat-list-option style="font-size: 14px">Speed: {{this.gameService.drugInventory['Speed'].Quantity}} @ {{this.gameService.drugInventory['Speed'].Lpp}}</mat-list-option>
+        <mat-list-option style="font-size: 14px">Weed: {{this.gameService.drugInventory['Weed'].Quantity}} @ {{this.gameService.drugInventory['Weed'].Lpp}}</mat-list-option>
       </mat-selection-list>
       <mat-card-actions class="purchase-button">
           <div class="container">
               <div fxLayout="row" fxLayoutAlign="start center" class="content">
-                <div class="blocks" fxFlex= "50%"></div>
+                <div class="blocks" fxFlex= "0%"></div>
                 <button mat-raised-button color="accent" (click)='openDialog()' [disabled]="!this.gameService.canSell">Sell</button>
               </div>
           </div>

@@ -5,12 +5,13 @@
   <div>
     <mat-card>
       <mat-selection-list [(ngModel)]="this.gameService.drugsToBuy" #dfs name="dfs">
-        <mat-list-option *ngFor="let drug of this.gameService.drugsAndPrices" [value]="drug" [disabled]="drug.price > this.gameService.playerMoney"> {{drug.drug}} @ {{drug.price}}  </mat-list-option>
+        <mat-list-option style="font-size: 14px" *ngFor="let drug of this.gameService.drugsAndPrices" [value]="drug" [disabled]="drug.price > this.gameService.playerMoney"> {{drug.drug}} @ {{drug.price}}  
+        </mat-list-option>
       </mat-selection-list>
       <mat-card-actions>
         <div class="container">
           <div fxLayout="row" fxLayoutAlign="start center" class="content">
-            <div class="blocks" fxFlex= "80%"></div>
+            <div class="blocks" fxFlex= "0%"></div>
             <button mat-raised-button color="accent" (click)="openDialog()">Purchase</button>
           </div>
         </div>
