@@ -1,1 +1,11 @@
+<mat-card class = "sell-drugs-card">
+  <mat-list>
+    <mat-list-item *ngFor="let drug of this.gameService.drugsToSell; let n=index">{{drug.Name}} {{drug.Lpp}}
+      <mat-slider thumbLabel max="{{this.gameService.drugInventory[drug.Name].Quantity}}" [(ngModel)]="this.gameService.sellDrugQuants[n]"
+      [value]="1" (change)="this.gameService.calculateOrderProfit()"></mat-slider>
+    </mat-list-item>
+  </mat-list>
+  Profit: {{this.gameService.orderProfit}}
+</mat-card>
+<button mat-raised-button color='accent' (click)='sellDrugs()'>Sell</button>
 <button mat-raised-button color='accent' (click)='onCloseClick()'>Close</button>

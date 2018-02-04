@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Drug } from '../drug';
 import { GameService } from '../game.service';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatSelectionList } from '@angular/material';
@@ -33,8 +33,6 @@ export class DrugsforsaleComponent implements OnInit {
     });
 
     buydrugsDialog.afterClosed().subscribe(result => {
-      result = [];
-      console.log('The dialog was closed.');
       this.dfs.deselectAll();
     });
   }

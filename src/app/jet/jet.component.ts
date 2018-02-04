@@ -24,6 +24,7 @@ export class JetComponent implements OnInit {
     this.gameService.currentLocation = this.destination;
     this.gameService.tabIndex = 0;
     this.currentLocation = this.destination;
+    this.gameService.toggleSellDrugs();
 
   }
 

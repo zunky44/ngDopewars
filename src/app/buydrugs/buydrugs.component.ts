@@ -32,6 +32,8 @@ export class BuydrugsComponent implements OnInit {
     this.gameService.popDrugsPurchased();
     this.gameService.addToInventory();
     this.gameService.buyDrugTotal = 0;
+    this.gameService.toggleSellDrugs();
+
   }
 
 

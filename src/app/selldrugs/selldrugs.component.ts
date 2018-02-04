@@ -18,6 +18,13 @@ export class SelldrugsComponent implements OnInit {
   onCloseClick(): void {
     this.selldrugsDialog.close();
   }
+  sellDrugs(): void {
+    this.selldrugsDialog.close();
+    this.gameService.sellDrugs();
+    this.gameService.popDrugsSold();
+    this.gameService.removeFromInventory();
+  }
+
 
 
 }

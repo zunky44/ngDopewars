@@ -48,6 +48,12 @@ export class GameService {
     Molly: {Name: 'Molly', Quantity: 0, Lpp: 0},
     Opium: {Name: 'Opium', Quantity: 0, Lpp: 0}
   };
+  drugsToSell = [];
+  sellDrugQuants = [];
+  orderProfit = 0;
+  canSell = false;
+  drugsSold = [];
+
 
 
   constructor() {
@@ -141,7 +147,6 @@ export class GameService {
   calculateOrderTotal() {
     this.buyDrugTotal = 0;
     this.buyMaxQuantity = [];
-    console.log(this.buyMaxQuantity);
 
     for (let i = 0; i < this.drugsToBuy.length; i++) {
       if (this.buyDrugQuants[i] === null) { this.buyDrugQuants[i] = 0;
@@ -170,10 +175,69 @@ export class GameService {
     for (let i = 0; i < this.drugsPurchased.length; i++) {
       if (this.drugsPurchased[i].Quantity > 0) {
         this.drugInventory[this.drugsPurchased[i].Drug.drug].Quantity += this.drugsPurchased[i].Quantity;
-        this.drugInventory[this.drugsPurchased[i].Drug.drug].Lpp += this.drugsPurchased[i].Drug.price;
+        this.drugInventory[this.drugsPurchased[i].Drug.drug].Lpp = this.drugsPurchased[i].Drug.price;
       }
     }
   }
+  popDrugsToSell() {
+    for (const drug of Object.values(this.drugInventory)) {
+      if (drug.Quantity > 0) {
+        if (!this.drugsToSell.includes(drug)) {
+          this.drugsToSell.push(drug);
+        }
+      }
+    }
+  }
+  toggleSellDrugs() {
+    const drugsInInventory = [];
+    for (const drug of Object.values(this.drugInventory)) {
+      if (drug.Quantity > 0) {
+        drugsInInventory.push(drug.Name);
+      }
+    }
+    for (const drug of Object.values(drugsInInventory)) {
+      if (this.drugsforSale.includes(drug)) {
+        this.canSell = true;
+        break;
+      } else {
+        this.canSell = false;
+      }
+    }
+  }
+  calculateOrderProfit() {
+    this.orderProfit = 0;
+    for (let i = 0; i < this.drugsToSell.length; i++){
+      if (this.sellDrugQuants[i] === null) { this.sellDrugQuants[i] = 0;
+      }
+      if (this.sellDrugQuants[i] === undefined) {
+        this.sellDrugQuants[i] = 0;
+      }
+    }
+    for (let i = 0; i < this.drugsToSell.length; i++) {
+      for (let j = 0; j < this.drugsAndPrices.length; j++) {
+        if (this.drugsToSell[i].Name === this.drugsAndPrices[j].drug) {
+          this.orderProfit += this.sellDrugQuants[i] * this.drugsAndPrices[j].price;
+        }
+      }
+    }
+  }
+  popDrugsSold() {
+    this.drugsSold = [];
+    for (let i = 0; i < this.drugsToSell.length; i++) {
+      this.drugsSold.push({Drug: this.drugsToSell[i].Name, Quantity: this.sellDrugQuants[i]});
+    }
+  }
+    sellDrugs() {
+      this.playerMoney += this.orderProfit;
+    }
+    removeFromInventory() {
+      for (let i = 0; i < this.drugsSold.length; i++) {
+        if (this.drugsSold[i].Quantity > 0) {
+          this.drugInventory[this.drugsSold[i].Drug].Quantity -= this.drugsPurchased[i].Quantity;
+        }
+      }
+    }
 }
+
 
 
