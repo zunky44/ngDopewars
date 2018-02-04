@@ -28,9 +28,9 @@ export class InventoryComponent implements OnInit {
       data: {},
       disableClose: true
     });
-
+    this.inv.deselectAll();
     selldrugsDialog.afterClosed().subscribe(result => {
-      this.inv.deselectAll();
+      // this.inv.deselectAll();
     });
   }
 
